@@ -1,15 +1,14 @@
 module Main exposing (..)
 
-import Html exposing (Html, div, h1, p, strong, text)
-import Html.Attributes exposing (class)
+import Html exposing (Html, div, h1, p, source, strong, text, video)
+import Html.Attributes exposing (attribute, autoplay, class, loop, src, type_)
 
 
 view : Html msg
 view =
-    div [ class "jumbotron" ]
-        [ h1 [] [ text "Welcome to Shameless Gdańsk" ]
-        , p [] [ text "Work in progress" ]
-        , p [] [ strong [] [ text "Keep in touch" ] ]
+    div [ class "video-wrapper" ]
+        [ video [ class "full-video", autoplay True, loop True, attribute "muted" "" ]
+            [ source [ src "src/assets/public/shameless_gdansk_logo_animation_v2.mp4", type_ "video/mp4" ] [] ]
         ]
 
 

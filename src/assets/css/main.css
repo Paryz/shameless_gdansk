@@ -1,0 +1,8 @@
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.full-video {
+  width: 80%;
+}

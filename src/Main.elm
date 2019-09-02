@@ -1,7 +1,8 @@
 module Main exposing (..)
 
 import Html exposing (Html, div, h1, p, source, strong, text, video)
-import Html.Attributes exposing (attribute, autoplay, class, id, loop, src, type_)
+import Html.Attributes exposing (autoplay, class, id, loop, property, src, type_)
+import Json.Encode as Json
 
 
 view : Html msg
@@ -10,8 +11,7 @@ view =
         [ video
             [ class "full-video"
             , id "video"
-            , attribute "muted" ""
-            , attribute "preload" ""
+            , property "muted" (Json.bool True)
             , autoplay True
             , loop True
             ]

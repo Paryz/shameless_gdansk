@@ -1,5 +1,6 @@
 module Main exposing (..)
 
+import Bootstrap.Grid as Grid
 import Html exposing (Html, div, h1, p, source, strong, text, video)
 import Html.Attributes exposing (autoplay, class, id, loop, property, src, type_)
 import Json.Encode as Json
@@ -7,7 +8,7 @@ import Json.Encode as Json
 
 view : Html msg
 view =
-    div [ class "video-wrapper" ]
+    Grid.container [ class "video-wrapper" ]
         [ video
             [ class "full-video"
             , id "video"

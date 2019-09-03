@@ -13,6 +13,7 @@ view =
             [ class "full-video"
             , id "video"
             , property "muted" (Json.bool True)
+            , property "playsinline" (Json.bool True)
             , autoplay True
             , loop True
             ]

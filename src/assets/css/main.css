@@ -7,3 +7,9 @@
 .full-video {
   width: 80%;
 }
+
+@media (max-width: 600px) {
+  .video-wrapper {
+    max-height: 160px;
+  }
+}

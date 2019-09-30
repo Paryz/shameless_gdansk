@@ -6,6 +6,7 @@
 .video-wrapper {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   padding: 0 !important;
 }
 
@@ -18,11 +19,11 @@
   top: 0;
   width: 100%;
   z-index: 1;
-  font-family: 'BandeinsSansRegular', serif;
   font-weight: bold;
   font-size: 2vh;
   text-decoration: none;
   color: white !important;
+  font-family: 'BandeinsSansRegular', serif;
 }
 
 .navigation a {
@@ -31,6 +32,65 @@
 
 .full-video {
   width: 100%;
+}
+
+.organizers-wrapper {
+  text-align: center;
+}
+
+.organizers {
+  font-family: 'BandeinsSansRegular', serif;
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+.organizers-logos {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 2vh;
+}
+
+.organizers-logos img {
+  width: auto;
+  height: 20vh;
+}
+
+.patronats {
+  font-family: 'BandeinsSansRegular', serif;
+  font-size: 3vh;
+  font-weight: bold;
+  color: #e96a95;
+  padding: 3vh 0 3vh 0;
+}
+
+.patronats-logos {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2vh 0 5vh 0;
+}
+
+.patronats-logos img {
+  width: auto;
+  height: 12vh;
+}
+
+.hashtag {
+  font-family: 'BandeinsSansRegular', serif;
+  background-color: #f8a680;
+  color: white;
+  padding-bottom: 5vh;
+  text-align: center;
+  font-size: 2.5vh;
+}
+
+.hashtag-large {
+  font-size: 10vh;
+  font-weight: bold;
+  padding: 5vh 0 5vh 0;
+}
+
+.hashtag-fifth {
+  font-weight: bold;
 }
 
 @media (max-width: 600px) {

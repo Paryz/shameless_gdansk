@@ -111,7 +111,7 @@ view model =
             ]
         , Grid.row [ Row.centerMd, Row.attrs [ class "hashtag" ] ]
             [ Grid.col [ Col.xs12, Col.attrs [ class "hashtag-large" ] ]
-                [ text "#shamlessgdansk" ]
+                [ text "#shamelessgdansk" ]
             , Grid.col [ Col.xs12, Col.attrs [ class "hashtag-small" ] ]
                 [ text lang.longNote.first ]
             , Grid.col [ Col.xs12, Col.attrs [ class "hashtag-small" ] ]
@@ -242,7 +242,7 @@ englishLang =
     , sponsors = "Sponsors"
     , registration = "Registration"
     , contact = "Contact"
-    , organizers = "Organizers"
+    , organizers = "Organizators"
     , patronats = "Honorary Patronage"
     , longNote =
         { first = "Let's meet to talk about sexually transmitted diseases."

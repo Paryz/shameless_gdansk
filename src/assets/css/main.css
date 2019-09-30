@@ -1,11 +1,36 @@
+@font-face {
+  font-family: BandeinsSansRegular;
+  src: url("BandeinsSansRegular.otf") format("opentype");
+}
+
 .video-wrapper {
   display: flex;
   justify-content: center;
-  max-height: 500px;
+  padding: 0 !important;
+}
+
+.navigation{
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  font-family: 'BandeinsSansRegular', serif;
+  font-weight: bold;
+  font-size: 2vh;
+  text-decoration: none;
+  color: white !important;
+}
+
+.navigation a {
+  color: white !important;
 }
 
 .full-video {
-  width: 80%;
+  width: 100%;
 }
 
 @media (max-width: 600px) {

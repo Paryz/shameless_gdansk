@@ -93,6 +93,65 @@
   font-weight: bold;
 }
 
+.about-table-row {
+  display: flex;
+  flex-direction: row;
+  min-height: 20vh;
+  text-align: center;
+  font-family: 'BandeinsSansRegular', serif;
+}
+
+.about-title {
+  font-family: 'BandeinsSansRegular', serif;
+  text-align: center;
+  font-size: 5vh;
+  font-weight: bold;
+  padding: 5vh 0 2vh 0;
+}
+
+.about-programme {
+  text-align: center;
+  padding: 2vh 0 2vh 0;
+}
+
+.about-table-cell {
+  width: 33%;
+  font-size: 3vh;
+  padding: 1rem;
+}
+
+.sponsors-wrapper {
+  text-align: center;
+}
+
+.sponsors-title {
+  font-family: 'BandeinsSansRegular', serif;
+  font-size: 3vh;
+  font-weight: bold;
+  color: #e96a95;
+  padding: 3vh 0 3vh 0;
+}
+
+.sponsors-logos {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2vh 0 5vh 0;
+}
+
+.sponsors-logos img {
+  width: auto;
+  height: 12vh;
+}
+.vertical-align {
+  position: relative;
+  top: 25%;
+}
+
+.pink {
+  background-color: #e96a95;
+  color: white;
+}
+
 @media (max-width: 600px) {
   .video-wrapper {
     max-height: 160px;

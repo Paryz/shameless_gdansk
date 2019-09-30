@@ -4,7 +4,7 @@ import Bootstrap.Grid as Grid
 import Bootstrap.Grid.Col as Col
 import Bootstrap.Grid.Row as Row
 import Browser
-import Html exposing (Html, a, div, h1, img, nav, p, source, strong, text, video)
+import Html exposing (Html, a, button, div, h1, img, nav, p, source, strong, text, video)
 import Html.Attributes exposing (autoplay, class, href, id, loop, property, src, type_)
 import Html.Events exposing (onClick)
 import Json.Encode as Json
@@ -23,6 +23,15 @@ type alias Language =
         , third : String
         , fourth : String
         , fifth : String
+        }
+    , programme : String
+    , aboutRecord :
+        { first : String
+        , second : String
+        , third : String
+        , fourth : String
+        , fifth : String
+        , sixth : String
         }
     }
 
@@ -105,9 +114,31 @@ view model =
             , Grid.col [ Col.xs12, Col.attrs [ class "hashtag-small hashtag-fifth" ] ]
                 [ text lang.longNote.fifth ]
             ]
-        , Grid.row [ Row.centerMd, Row.attrs [ class "about" ] ]
-            []
-        , div [ id "sponsors" ] []
+        , Grid.row [ Row.centerMd, Row.attrs [ id "about" ] ]
+            [ Grid.col [ Col.xs12, Col.attrs [ class "about-title" ] ]
+                [ text <| String.toUpper lang.about ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "about-programme" ] ]
+                [ button [ href "program", class "btn btn-secondary" ] [ text <| String.toUpper lang.programme ] ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "about-table-row" ] ]
+                [ div [ class "about-table-cell" ] [ text lang.aboutRecord.first ]
+                , div [ class "pink about-table-cell" ] [ text lang.aboutRecord.second ]
+                , div [ class "about-table-cell" ] [ text lang.aboutRecord.third ]
+                ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "about-table-row" ] ]
+                [ div [ class "pink about-table-cell" ] [ text lang.aboutRecord.fourth ]
+                , div [ class "vertical-align about-table-cell" ] [ text lang.aboutRecord.fifth ]
+                , div [ class "pink about-table-cell" ] [ text lang.aboutRecord.sixth ]
+                ]
+            ]
+        , Grid.row [ Row.centerMd, Row.attrs [ id "sponsors", class "sponsors-wrapper" ] ]
+            [ Grid.col [ Col.xs12, Col.attrs [ class "sponsors-title" ] ]
+                [ text lang.sponsors ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "sponsors-logos" ] ]
+                [ img [ src "src/assets/public/logo_dr_cichiobieg.jpeg" ] []
+                , img [ src "src/assets/public/logo_primavika.jpg" ] []
+                , img [ src "src/assets/public/logo_unimil.png" ] []
+                ]
+            ]
         , div [ id "registration" ] []
         , div [ id "contact" ] []
         ]
@@ -133,14 +164,23 @@ englishLang =
     , sponsors = "Sponsors"
     , registration = "Registration"
     , contact = "Contact"
-    , organizers = "Organizers:"
-    , patronats = "Honorary Patronage:"
+    , organizers = "Organizers"
+    , patronats = "Honorary Patronage"
     , longNote =
         { first = "Let's meet to talk about sexually transmitted diseases."
         , second = "Stop being ashamed to ask questions!"
         , third = "Get education, share knowledge and take care of your health."
         , fourth = "Do it for yourself, do it for the people you care about."
         , fifth = "Prevent what can be prevented."
+        }
+    , programme = "Programme"
+    , aboutRecord =
+        { first = "Interdisciplinary cooperation between dermatologists and urologists"
+        , second = "Sexually transmitted diseases - education and prevention"
+        , third = "November - month of testical and prostate cancer awareness"
+        , fourth = "Dermatological signs of STDs"
+        , fifth = "Prostate cancer seen by biotechnologist"
+        , sixth = "STD on the Internet - is it easier to talk annonymously"
         }
     }
 
@@ -151,13 +191,22 @@ polishLang =
     , sponsors = "Sponsorzy"
     , registration = "Rejestracja"
     , contact = "Kontakt"
-    , organizers = "Organizatorzy:"
-    , patronats = "Patronaty Honorowe:"
+    , organizers = "Organizatorzy"
+    , patronats = "Patronaty Honorowe"
     , longNote =
         { first = "Spotkajmy się, aby porozmawiać o chorobach przenoszonych drogą płciową"
         , second = "Przestańmy się wstydzić, zacznijmy zadawać pytania!"
         , third = "Uczmy się, dzielmy się wiedzą z innymi i dbajmy o nasze zdrowie."
         , fourth = "Zróbmy to dla siebie i naszych najbliższych."
         , fifth = "Zabezpieczaj się, by zapobiegać."
+        }
+    , programme = "Program"
+    , aboutRecord =
+        { first = "Interdyscyplinarna współpraca między urologami a dermatologami"
+        , second = "Choroby przenoszone drogą płciową: edukacja i zapobieganie"
+        , third = "Profilaktyka nowotworóœ męskich - jąder i prostaty"
+        , fourth = "Skórne objawy chorób przenoszonych drogą płciową"
+        , fifth = "Rak prostaty okiem biotechnologa"
+        , sixth = "Dzielenie się wiedzą na temat chorób przenoszonych drogą płciową w Internecie"
         }
     }

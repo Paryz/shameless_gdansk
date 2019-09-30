@@ -140,11 +140,55 @@
 
 .sponsors-logos img {
   width: auto;
-  height: 12vh;
+  height: 8vh;
 }
-.vertical-align {
-  position: relative;
-  top: 25%;
+
+.registration-wrapper {
+  font-family: 'BandeinsSansRegular', serif;
+  text-align: center;
+  font-weight: bold;
+  padding: 5vh 0 5vh 0;
+}
+
+.registration-title {
+  font-size: 4vh;
+  padding-bottom: 3vh;
+}
+
+.registration-date {
+  font-size: 10vh;
+  color: #f8a680;
+  padding-bottom: 3vh;
+}
+
+.regulations-wrapper {
+  background-color: #f8a680;
+  font-family: 'BandeinsSansRegular', serif;
+  text-align: center;
+  font-weight: bold;
+  padding: 5vh 0 5vh 0;
+}
+
+.regulations-title {
+  font-size: 4vh;
+  padding-bottom: 3vh;
+}
+
+.contact-wrapper {
+  font-family: 'BandeinsSansRegular', serif;
+  text-align: center;
+  padding: 5vh 0 5vh 0;
+}
+
+.contact-title {
+  font-size: 4vh;
+  font-weight: bold;
+  padding-bottom: 3vh;
+}
+
+.contact-email {
+  font-size: 3vh;
+  padding-bottom: 3vh;
 }
 
 .pink {

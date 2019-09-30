@@ -4,14 +4,20 @@ import Bootstrap.Grid as Grid
 import Bootstrap.Grid.Col as Col
 import Bootstrap.Grid.Row as Row
 import Browser
-import Html exposing (Html, a, button, div, h1, img, nav, p, source, strong, text, video)
-import Html.Attributes exposing (autoplay, class, href, id, loop, property, src, type_)
+import Html exposing (Html, a, div, h1, img, nav, p, source, strong, text, video)
+import Html.Attributes exposing (autoplay, class, download, href, id, loop, property, src, target, type_)
 import Html.Events exposing (onClick)
 import Json.Encode as Json
 
 
+type LangType
+    = EN
+    | PL
+
+
 type alias Language =
-    { about : String
+    { language : LangType
+    , about : String
     , sponsors : String
     , registration : String
     , contact : String
@@ -33,6 +39,9 @@ type alias Language =
         , fifth : String
         , sixth : String
         }
+    , registrationNote : String
+    , regulations : String
+    , read : String
     }
 
 
@@ -118,7 +127,7 @@ view model =
             [ Grid.col [ Col.xs12, Col.attrs [ class "about-title" ] ]
                 [ text <| String.toUpper lang.about ]
             , Grid.col [ Col.xs12, Col.attrs [ class "about-programme" ] ]
-                [ button [ href "program", class "btn btn-secondary" ] [ text <| String.toUpper lang.programme ] ]
+                [ a [ href <| programmeUrl lang, target "_blank", class "btn btn-dark" ] [ text <| String.toUpper lang.programme ] ]
             , Grid.col [ Col.xs12, Col.attrs [ class "about-table-row" ] ]
                 [ div [ class "about-table-cell" ] [ text lang.aboutRecord.first ]
                 , div [ class "pink about-table-cell" ] [ text lang.aboutRecord.second ]
@@ -126,7 +135,7 @@ view model =
                 ]
             , Grid.col [ Col.xs12, Col.attrs [ class "about-table-row" ] ]
                 [ div [ class "pink about-table-cell" ] [ text lang.aboutRecord.fourth ]
-                , div [ class "vertical-align about-table-cell" ] [ text lang.aboutRecord.fifth ]
+                , div [ class "about-table-cell" ] [ text lang.aboutRecord.fifth ]
                 , div [ class "pink about-table-cell" ] [ text lang.aboutRecord.sixth ]
                 ]
             ]
@@ -139,8 +148,46 @@ view model =
                 , img [ src "src/assets/public/logo_unimil.png" ] []
                 ]
             ]
-        , div [ id "registration" ] []
-        , div [ id "contact" ] []
+        , Grid.row [ Row.centerMd, Row.attrs [ id "registration", class "registration-wrapper" ] ]
+            [ Grid.col [ Col.xs12, Col.attrs [ class "registration-title" ] ]
+                [ text lang.registrationNote ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "registration-date" ] ]
+                [ text "03.11.2019" ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "registration-button" ] ]
+                [ a
+                    [ href <| registrationUrl lang
+                    , target "_blank"
+                    , class "btn btn-dark"
+                    ]
+                    [ text <| String.toUpper lang.registration ]
+                ]
+            ]
+        , Grid.row [ Row.centerMd, Row.attrs [ id "regulations", class "regulations-wrapper" ] ]
+            [ Grid.col [ Col.xs12, Col.attrs [ class "regulations-title" ] ]
+                [ text lang.regulations ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "regulations-button" ] ]
+                [ a
+                    [ href <| rulesUrl lang
+                    , target "_blank"
+                    , class "btn btn-dark"
+                    ]
+                    [ text <| String.toUpper lang.read ]
+                ]
+            ]
+        , Grid.row [ Row.centerMd, Row.attrs [ id "contact", class "contact-wrapper" ] ]
+            [ Grid.col [ Col.xs12, Col.attrs [ class "contact-title" ] ]
+                [ text lang.contact ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "contact-email" ] ]
+                [ text "shameless@gumed.edu.pl" ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "contact-facebook" ] ]
+                [ a
+                    [ href "https://www.facebook.com/Shameless-Gda%C5%84sk-Studencka-Konferencja-Urologiczno-Dermatologiczna-105801244136649"
+                    , target "_blank"
+                    , class "btn btn-dark"
+                    ]
+                    [ text "Facebook" ]
+                ]
+            ]
         ]
 
 
@@ -158,9 +205,40 @@ update msg model =
             { model | languageJson = polishLang }
 
 
+programmeUrl : Language -> String
+programmeUrl lang =
+    case lang.language of
+        EN ->
+            "english-link"
+
+        PL ->
+            "polish-link"
+
+
+registrationUrl : Language -> String
+registrationUrl lang =
+    case lang.language of
+        EN ->
+            "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__iVtKxtUMkk4MzUzTjAwRzBESDlQUU04UzNINTdGUS4u"
+
+        PL ->
+            "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__iVtKxtUNjlHSDdLWEJGMjNWVE40S1BEUjlJTjVRTC4u"
+
+
+rulesUrl : Language -> String
+rulesUrl lang =
+    case lang.language of
+        EN ->
+            "https://shameless.gumed.edu.pl/src/assets/public/rules-ang.pdf"
+
+        PL ->
+            "https://shameless.gumed.edu.pl/src/assets/public/rules-pl.pdf"
+
+
 englishLang : Language
 englishLang =
-    { about = "About conference"
+    { language = EN
+    , about = "About conference"
     , sponsors = "Sponsors"
     , registration = "Registration"
     , contact = "Contact"
@@ -182,12 +260,16 @@ englishLang =
         , fifth = "Prostate cancer seen by biotechnologist"
         , sixth = "STD on the Internet - is it easier to talk annonymously"
         }
+    , registrationNote = "REGISTER TO SHAMELESS GDAŃSK BY"
+    , regulations = "RULES AND REGULATIONS"
+    , read = "READ"
     }
 
 
 polishLang : Language
 polishLang =
-    { about = "O konferencji"
+    { language = PL
+    , about = "O konferencji"
     , sponsors = "Sponsorzy"
     , registration = "Rejestracja"
     , contact = "Kontakt"
@@ -209,4 +291,7 @@ polishLang =
         , fifth = "Rak prostaty okiem biotechnologa"
         , sixth = "Dzielenie się wiedzą na temat chorób przenoszonych drogą płciową w Internecie"
         }
+    , registrationNote = "REJESTRACJA NA SHAMELESS GDAŃSK TRWA DO"
+    , regulations = "REGULAMIN SESJI KONKURSOWEJ"
+    , read = "PRZECZYTAJ"
     }

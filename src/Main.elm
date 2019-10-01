@@ -130,9 +130,8 @@ view model =
         , Grid.row [ Row.centerMd, Row.attrs [ id "about" ] ]
             [ Grid.col [ Col.xs12, Col.attrs [ class "about-title" ] ]
                 [ text <| String.toUpper lang.about ]
-
-            -- , Grid.col [ Col.xs12, Col.attrs [ class "about-programme" ] ]
-            --     [ a [ href <| programmeUrl lang, target "_blank", class "btn btn-dark" ] [ text <| String.toUpper lang.programme ] ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "about-programme" ] ]
+                [ a [ href programmeUrl, target "_blank", class "btn btn-dark" ] [ text <| String.toUpper lang.programme ] ]
             , Grid.col [ Col.xs12, Col.attrs [ class "about-table-row" ] ]
                 [ div [ class "about-table-cell" ] [ text lang.aboutRecord.first ]
                 , div [ class "pink about-table-cell" ] [ text lang.aboutRecord.second ]
@@ -210,14 +209,9 @@ update msg model =
             { model | languageJson = polishLang }
 
 
-programmeUrl : Language -> String
-programmeUrl lang =
-    case lang.language of
-        EN ->
-            "english-link"
-
-        PL ->
-            "polish-link"
+programmeUrl : String
+programmeUrl =
+    "https://shameless.gumed.edu.pl/src/assets/public/programme.pdf"
 
 
 registrationUrl : Language -> String

@@ -55,6 +55,16 @@
   height: 20vh;
 }
 
+.organizers-logos-smaller {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 2vh;
+}
+
+.organizers-logos-smaller img {
+  width: auto;
+  height: 15vh;
+}
 .patronats {
   font-family: 'BandeinsSansRegular', serif;
   font-size: 3vh;

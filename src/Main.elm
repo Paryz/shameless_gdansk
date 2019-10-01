@@ -98,8 +98,12 @@ view model =
                 [ img [ src "src/assets/public/logo_kliniki_dermy.png" ] []
                 , img [ src "src/assets/public/logo_kola_ed.png" ] []
                 , img [ src "src/assets/public/logo_dermatologiczne.png" ] []
-                , img [ src "src/assets/public/logo_gumed.jpg" ] []
-                , img [ src "src/assets/public/logo_kliniki_dermy.png" ] []
+                , img [ src "src/assets/public/logo_gumed.png" ] []
+                , img [ src "src/assets/public/logo_skn_uro.jpg" ] []
+                ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "organizers-logos-smaller" ] ]
+                [ img [ src "src/assets/public/logo_ebu.png" ] []
+                , img [ src "src/assets/public/logo_kliniki_uro.png" ] []
                 ]
             , Grid.col
                 [ Col.xs12, Col.attrs [ class "patronats" ] ]
@@ -257,7 +261,7 @@ englishLang =
         , second = "Sexually transmitted diseases - education and prevention"
         , third = "November - month of testical and prostate cancer awareness"
         , fourth = "Dermatological signs of STDs"
-        , fifth = "Prostate cancer seen by biotechnologist"
+        , fifth = "Prostate cancer through the eyes of a biotechnologist"
         , sixth = "STD on the Internet - is it easier to talk annonymously"
         }
     , registrationNote = "REGISTER TO SHAMELESS GDAŃSK BY"

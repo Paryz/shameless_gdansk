@@ -130,8 +130,9 @@ view model =
         , Grid.row [ Row.centerMd, Row.attrs [ id "about" ] ]
             [ Grid.col [ Col.xs12, Col.attrs [ class "about-title" ] ]
                 [ text <| String.toUpper lang.about ]
-            , Grid.col [ Col.xs12, Col.attrs [ class "about-programme" ] ]
-                [ a [ href <| programmeUrl lang, target "_blank", class "btn btn-dark" ] [ text <| String.toUpper lang.programme ] ]
+
+            -- , Grid.col [ Col.xs12, Col.attrs [ class "about-programme" ] ]
+            --     [ a [ href <| programmeUrl lang, target "_blank", class "btn btn-dark" ] [ text <| String.toUpper lang.programme ] ]
             , Grid.col [ Col.xs12, Col.attrs [ class "about-table-row" ] ]
                 [ div [ class "about-table-cell" ] [ text lang.aboutRecord.first ]
                 , div [ class "pink about-table-cell" ] [ text lang.aboutRecord.second ]
@@ -280,7 +281,7 @@ polishLang =
     , organizers = "Organizatorzy"
     , patronats = "Patronaty Honorowe"
     , longNote =
-        { first = "Spotkajmy się, aby porozmawiać o chorobach przenoszonych drogą płciową"
+        { first = "Spotkajmy się, aby porozmawiać o chorobach przenoszonych drogą płciową."
         , second = "Przestańmy się wstydzić, zacznijmy zadawać pytania!"
         , third = "Uczmy się, dzielmy się wiedzą z innymi i dbajmy o nasze zdrowie."
         , fourth = "Zróbmy to dla siebie i naszych najbliższych."
@@ -289,8 +290,8 @@ polishLang =
     , programme = "Program"
     , aboutRecord =
         { first = "Interdyscyplinarna współpraca między urologami a dermatologami"
-        , second = "Choroby przenoszone drogą płciową: edukacja i zapobieganie"
-        , third = "Profilaktyka nowotworóœ męskich - jąder i prostaty"
+        , second = "Choroby przenoszone drogą płciową: edukacja i profilaktyka"
+        , third = "Profilaktyka nowotworów męskich - jąder i prostaty"
         , fourth = "Skórne objawy chorób przenoszonych drogą płciową"
         , fifth = "Rak prostaty okiem biotechnologa"
         , sixth = "Dzielenie się wiedzą na temat chorób przenoszonych drogą płciową w Internecie"

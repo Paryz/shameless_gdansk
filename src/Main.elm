@@ -99,7 +99,7 @@ view model =
                 , img [ src "src/assets/public/logo_kola_ed.png" ] []
                 , img [ src "src/assets/public/logo_dermatologiczne.png" ] []
                 , img [ src "src/assets/public/logo_gumed.png" ] []
-                , img [ src "src/assets/public/logo_skn_uro.jpg" ] []
+                , img [ src "src/assets/public/logo_skn_uro.png", class "skn-uro-logo" ] []
                 ]
             , Grid.col [ Col.xs12, Col.attrs [ class "organizers-logos-smaller" ] ]
                 [ img [ src "src/assets/public/logo_ebu.png" ] []

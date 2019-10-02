@@ -1,6 +1,6 @@
 @font-face {
-  font-family: BandeinsSansRegular;
-  src: url("BandeinsSansRegular.otf") format("opentype");
+  font-family: Roboto-font;
+  src: url("Roboto-font.ttf") format("ttf");
 }
 
 .main-container {
@@ -32,7 +32,7 @@
   font-size: 2vh;
   text-decoration: none;
   color: white !important;
-  font-family: 'BandeinsSansRegular', serif;
+  font-family: 'Roboto-font', serif;
 }
 
 .navigation a {
@@ -49,7 +49,7 @@
 }
 
 .organizers {
-  font-family: 'BandeinsSansRegular', serif;
+  font-family: 'Roboto-font', serif;
   font-size: 3vh;
   font-weight: bold;
 }
@@ -76,7 +76,7 @@
   height: 15vh;
 }
 .patronats {
-  font-family: 'BandeinsSansRegular', serif;
+  font-family: 'Roboto-font', serif;
   font-size: 3vh;
   font-weight: bold;
   color: #e96a95;
@@ -95,7 +95,7 @@
 }
 
 .hashtag {
-  font-family: 'BandeinsSansRegular', serif;
+  font-family: 'Roboto-font', serif;
   margin: 0 !important;
   background-color: #f8a680;
   color: white;
@@ -123,11 +123,11 @@
   flex-direction: row;
   min-height: 20vh;
   text-align: center;
-  font-family: 'BandeinsSansRegular', serif;
+  font-family: 'Roboto-font', serif;
 }
 
 .about-title {
-  font-family: 'BandeinsSansRegular', serif;
+  font-family: 'Roboto-font', serif;
   text-align: center;
   font-size: 5vh;
   font-weight: bold;
@@ -151,7 +151,7 @@
 }
 
 .sponsors-title {
-  font-family: 'BandeinsSansRegular', serif;
+  font-family: 'Roboto-font', serif;
   font-size: 3vh;
   font-weight: bold;
   color: #e96a95;
@@ -171,7 +171,7 @@
 
 .registration-wrapper {
   margin: 0 !important;
-  font-family: 'BandeinsSansRegular', serif;
+  font-family: 'Roboto-font', serif;
   text-align: center;
   font-weight: bold;
   padding: 5vh 0 5vh 0;
@@ -191,7 +191,7 @@
 .regulations-wrapper {
   margin: 0 !important;
   background-color: #f8a680;
-  font-family: 'BandeinsSansRegular', serif;
+  font-family: 'Roboto-font', serif;
   text-align: center;
   font-weight: bold;
   padding: 5vh 0 5vh 0;
@@ -204,7 +204,7 @@
 
 .contact-wrapper {
   margin: 0 !important;
-  font-family: 'BandeinsSansRegular', serif;
+  font-family: 'Roboto-font', serif;
   text-align: center;
   padding: 5vh 0 5vh 0;
 }

@@ -1,6 +1,6 @@
 @font-face {
-  font-family: Roboto-font;
-  src: url("Roboto-font.ttf") format("ttf");
+  font-family: "Roboto-font";
+  src: url("Roboto-font.woff") format("woff");
 }
 
 .main-container {
@@ -32,7 +32,7 @@
   font-size: 2vh;
   text-decoration: none;
   color: white !important;
-  font-family: 'Roboto-font', serif;
+  font-family: Roboto-font;
 }
 
 .navigation a {
@@ -49,7 +49,7 @@
 }
 
 .organizers {
-  font-family: 'Roboto-font', serif;
+  font-family: Roboto-font;
   font-size: 3vh;
   font-weight: bold;
 }
@@ -76,7 +76,7 @@
   height: 15vh;
 }
 .patronats {
-  font-family: 'Roboto-font', serif;
+  font-family: Roboto-font;
   font-size: 3vh;
   font-weight: bold;
   color: #e96a95;
@@ -95,7 +95,7 @@
 }
 
 .hashtag {
-  font-family: 'Roboto-font', serif;
+  font-family: Roboto-font;
   margin: 0 !important;
   background-color: #f8a680;
   color: white;
@@ -123,11 +123,11 @@
   flex-direction: row;
   min-height: 20vh;
   text-align: center;
-  font-family: 'Roboto-font', serif;
+  font-family: Roboto-font;
 }
 
 .about-title {
-  font-family: 'Roboto-font', serif;
+  font-family: Roboto-font;
   text-align: center;
   font-size: 5vh;
   font-weight: bold;
@@ -151,7 +151,7 @@
 }
 
 .sponsors-title {
-  font-family: 'Roboto-font', serif;
+  font-family: Roboto-font;
   font-size: 3vh;
   font-weight: bold;
   color: #e96a95;
@@ -171,7 +171,7 @@
 
 .registration-wrapper {
   margin: 0 !important;
-  font-family: 'Roboto-font', serif;
+  font-family: Roboto-font;
   text-align: center;
   font-weight: bold;
   padding: 5vh 0 5vh 0;
@@ -191,7 +191,7 @@
 .regulations-wrapper {
   margin: 0 !important;
   background-color: #f8a680;
-  font-family: 'Roboto-font', serif;
+  font-family: Roboto-font;
   text-align: center;
   font-weight: bold;
   padding: 5vh 0 5vh 0;
@@ -204,7 +204,7 @@
 
 .contact-wrapper {
   margin: 0 !important;
-  font-family: 'Roboto-font', serif;
+  font-family: Roboto-font;
   text-align: center;
   padding: 5vh 0 5vh 0;
 }

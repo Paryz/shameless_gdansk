@@ -3,11 +3,20 @@
   src: url("BandeinsSansRegular.otf") format("opentype");
 }
 
-.video-wrapper {
+.main-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 0 !important;
+}
+
+.video-wrapper {
+  margin: 0 !important;
+}
+
+.video-wrapper-column {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
 }
 
 .navigation{
@@ -36,6 +45,7 @@
 
 .organizers-wrapper {
   text-align: center;
+  margin: 0 !important;
 }
 
 .organizers {
@@ -86,6 +96,7 @@
 
 .hashtag {
   font-family: 'BandeinsSansRegular', serif;
+  margin: 0 !important;
   background-color: #f8a680;
   color: white;
   padding-bottom: 5vh;
@@ -101,6 +112,10 @@
 
 .hashtag-fifth {
   font-weight: bold;
+}
+
+#about {
+  margin: 0 !important;
 }
 
 .about-table-row {
@@ -131,6 +146,7 @@
 }
 
 .sponsors-wrapper {
+  margin: 0 !important;
   text-align: center;
 }
 
@@ -154,6 +170,7 @@
 }
 
 .registration-wrapper {
+  margin: 0 !important;
   font-family: 'BandeinsSansRegular', serif;
   text-align: center;
   font-weight: bold;
@@ -172,6 +189,7 @@
 }
 
 .regulations-wrapper {
+  margin: 0 !important;
   background-color: #f8a680;
   font-family: 'BandeinsSansRegular', serif;
   text-align: center;
@@ -185,6 +203,7 @@
 }
 
 .contact-wrapper {
+  margin: 0 !important;
   font-family: 'BandeinsSansRegular', serif;
   text-align: center;
   padding: 5vh 0 5vh 0;

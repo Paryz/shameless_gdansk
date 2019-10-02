@@ -60,9 +60,9 @@ view model =
         lang =
             model.languageJson
     in
-    Grid.containerFluid [ class "video-wrapper" ]
-        [ Grid.row [ Row.centerMd ]
-            [ Grid.col [ Col.xs12 ]
+    Grid.containerFluid [ class "main-container" ]
+        [ Grid.row [ Row.centerMd, Row.attrs [ class "video-wrapper" ] ]
+            [ Grid.col [ Col.xs12, Col.attrs [ class "video-wrapper-column" ] ]
                 [ nav [ class "navigation" ]
                     [ div []
                         [ a [ href "#", onClick ToPln ] [ text "PL" ]

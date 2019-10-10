@@ -111,6 +111,7 @@ view model =
             , Grid.col [ Col.xs12, Col.attrs [ class "patronats-logos" ] ]
                 [ img [ src "src/assets/public/logo_pathronage.png" ] []
                 , img [ src "src/assets/public/logo_ptu_small.jpg" ] []
+                , img [ src "src/assets/public/logo_movember.png" ] []
                 ]
             ]
         , Grid.row [ Row.centerMd, Row.attrs [ class "hashtag" ] ]

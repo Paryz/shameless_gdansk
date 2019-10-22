@@ -19,6 +19,7 @@ type alias Language =
     { language : LangType
     , about : String
     , sponsors : String
+    , mediaPatrons : String
     , registration : String
     , contact : String
     , organizers : String
@@ -113,6 +114,9 @@ view model =
                 , img [ src "src/assets/public/logo_ptu_small.jpg" ] []
                 , img [ src "src/assets/public/logo_movember.png" ] []
                 ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "patronats-logos" ] ]
+                [ img [ src "src/assets/public/logo_uck.png" ] []
+                ]
             ]
         , Grid.row [ Row.centerMd, Row.attrs [ class "hashtag" ] ]
             [ Grid.col [ Col.xs12, Col.attrs [ class "hashtag-large" ] ]
@@ -148,9 +152,16 @@ view model =
             [ Grid.col [ Col.xs12, Col.attrs [ class "sponsors-title" ] ]
                 [ text lang.sponsors ]
             , Grid.col [ Col.xs12, Col.attrs [ class "sponsors-logos" ] ]
-                [ img [ src "src/assets/public/logo_dr_cichiobieg.jpeg" ] []
+                [ img [ src "src/assets/public/logo_la_roche.jpg" ] []
+                , img [ src "src/assets/public/logo_lefrosch.png" ] []
+                , img [ src "src/assets/public/logo_dr_cichiobieg.jpeg" ] []
                 , img [ src "src/assets/public/logo_primavika.jpg" ] []
                 , img [ src "src/assets/public/logo_unimil.png" ] []
+                ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "media-patrons-title" ] ]
+                [ text lang.mediaPatrons ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "media-patrons-logos" ] ]
+                [ img [ src "src/assets/public/logo_smif.png" ] []
                 ]
             ]
         , Grid.row [ Row.centerMd, Row.attrs [ id "registration", class "registration-wrapper" ] ]
@@ -240,6 +251,7 @@ englishLang =
     { language = EN
     , about = "About conference"
     , sponsors = "Sponsors"
+    , mediaPatrons = "Media Patronage"
     , registration = "Registration"
     , contact = "Contact"
     , organizers = "Organizators"
@@ -271,6 +283,7 @@ polishLang =
     { language = PL
     , about = "O konferencji"
     , sponsors = "Sponsorzy"
+    , mediaPatrons = "Patronaty Medialne"
     , registration = "Rejestracja"
     , contact = "Kontakt"
     , organizers = "Organizatorzy"

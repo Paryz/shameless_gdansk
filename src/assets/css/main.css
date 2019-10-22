@@ -170,6 +170,24 @@
   height: 8vh;
 }
 
+.media-patrons-title {
+  font-family: Roboto-font;
+  font-size: 3vh;
+  font-weight: bold;
+  color: #e96a95;
+  padding: 3vh 0 3vh 0;
+}
+
+.media-patrons-logos {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2vh 0 5vh 0;
+}
+
+.media-patrons-logos img {
+  width: auto;
+  height: 8vh;
+}
 .registration-wrapper {
   margin: 0 !important;
   font-family: Roboto-font;

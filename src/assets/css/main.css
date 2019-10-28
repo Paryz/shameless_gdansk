@@ -81,18 +81,18 @@
   font-size: 3vh;
   font-weight: bold;
   color: #e96a95;
-  padding: 3vh 0 3vh 0;
+  padding: 3vh 0 1vh 0;
 }
 
 .patronats-logos {
   display: flex;
   justify-content: space-evenly;
-  padding: 2vh 0 5vh 0;
+  padding: 1vh 0 1vh 0;
 }
 
 .patronats-logos img {
   width: auto;
-  height: 12vh;
+  height: 11vh;
 }
 
 .hashtag {
@@ -298,6 +298,11 @@
     color: #f8a680;
     padding-bottom: 3vh;
   }
+
+  .media-patrons-logos img {
+    width: auto;
+    height: 6vh;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
@@ -341,7 +346,7 @@
 
   .patronats-logos img {
     width: auto;
-    height: 8vh;
+    height: 7vh;
   }
 
   .sponsors-logos img {
@@ -353,5 +358,10 @@
     font-size: 7vh;
     color: #f8a680;
     padding-bottom: 3vh;
+  }
+
+  .media-patrons-logos img {
+    width: auto;
+    height: 5vh;
   }
 }

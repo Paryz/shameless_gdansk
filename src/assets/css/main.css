@@ -29,7 +29,7 @@
   width: 100%;
   z-index: 1;
   font-weight: bold;
-  font-size: 2vh;
+  font-size: 1.5rem;
   text-decoration: none;
   color: white !important;
   font-family: Roboto-font;
@@ -244,67 +244,6 @@
   color: white;
 }
 
-@media (max-width: 600px) {
-  .organizers-logos img {
-    width: auto;
-    height: 8vh;
-  }
-
-  .organizers-logos-smaller img {
-    width: auto;
-    height: 5vh;
-  }
-
-  .navigation{
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    font-weight: bold;
-    font-size: 1vh;
-    text-decoration: none;
-    color: white !important;
-    font-family: Roboto-font;
-  }
-
-  .hashtag-large {
-    font-size: 4vh;
-    font-weight: bold;
-    padding: 5vh 0 5vh 0;
-  }
-
-  .about-table-cell {
-    width: 33%;
-    font-size: 1.5vh;
-    padding: 1rem;
-  }
-
-  .patronats-logos img {
-    width: auto;
-    height: 6vh;
-  }
-
-  .sponsors-logos img {
-    width: auto;
-    height: 8vh;
-  }
-
-  .registration-date {
-    font-size: 5vh;
-    color: #f8a680;
-    padding-bottom: 3vh;
-  }
-
-  .media-patrons-logos img {
-    width: auto;
-    height: 6vh;
-  }
-}
-
 @media (min-width: 601px) and (max-width: 900px) {
   .organizers-logos img {
     width: auto;
@@ -326,7 +265,7 @@
     width: 100%;
     z-index: 1;
     font-weight: bold;
-    font-size: 1.5vh;
+    font-size: 1rem;
     text-decoration: none;
     color: white !important;
     font-family: Roboto-font;
@@ -363,5 +302,66 @@
   .media-patrons-logos img {
     width: auto;
     height: 5vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .organizers-logos img {
+    width: auto;
+    height: 8vh;
+  }
+
+  .organizers-logos-smaller img {
+    width: auto;
+    height: 5vh;
+  }
+
+  .navigation{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    font-weight: bold;
+    font-size: 0.5rem;
+    text-decoration: none;
+    color: white !important;
+    font-family: Roboto-font;
+  }
+
+  .hashtag-large {
+    font-size: 4vh;
+    font-weight: bold;
+    padding: 5vh 0 5vh 0;
+  }
+
+  .about-table-cell {
+    width: 33%;
+    font-size: 1.5vh;
+    padding: 1rem;
+  }
+
+  .patronats-logos img {
+    width: auto;
+    height: 6vh;
+  }
+
+  .sponsors-logos img {
+    width: auto;
+    height: 8vh;
+  }
+
+  .registration-date {
+    font-size: 5vh;
+    color: #f8a680;
+    padding-bottom: 3vh;
+  }
+
+  .media-patrons-logos img {
+    width: auto;
+    height: 6vh;
   }
 }

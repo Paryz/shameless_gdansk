@@ -1,4 +1,4 @@
-module Main exposing (..)
+module Main exposing (LangType(..), Language, Model, Msg(..), englishLang, main, polishLang, programmeUrl, registrationUrl, rulesUrl, update, view)
 
 import Bootstrap.Grid as Grid
 import Bootstrap.Grid.Col as Col
@@ -91,10 +91,12 @@ view model =
                     ]
                 ]
             ]
-        , Grid.row [ Row.centerMd, Row.attrs [ class "organizers-wrapper" ] ]
+        , Grid.row [ Row.centerMd, Row.attrs [ class "registration-wrapper" ] ]
             [ Grid.col [ Col.xs12, Col.attrs [ class "registration-date" ] ]
                 [ text "30.11.2019" ]
-            , Grid.col
+            ]
+        , Grid.row [ Row.centerMd, Row.attrs [ class "organizers-wrapper" ] ]
+            [ Grid.col
                 [ Col.xs12, Col.attrs [ class "organizers" ] ]
                 [ text lang.organizers ]
             , Grid.col [ Col.xs12, Col.attrs [ class "organizers-logos" ] ]

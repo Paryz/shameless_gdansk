@@ -43,6 +43,14 @@
   width: 100%;
 }
 
+.patronats-logos img.left {
+  padding-left: 25%;
+}
+
+.patronats-logos img.right {
+  padding-right: 25%;
+}
+
 .organizers-wrapper {
   text-align: center;
   margin: 0 !important;
@@ -306,6 +314,13 @@
 }
 
 @media (max-width: 600px) {
+  .patronats-logos img.left {
+    padding-left: 0;
+  }
+
+  .patronats-logos img.right {
+    padding-right: 0;
+  }
   .organizers-logos img {
     width: auto;
     height: 8vh;

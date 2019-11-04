@@ -118,15 +118,17 @@ view model =
             , Grid.col [ Col.xs6, Col.sm4, Col.attrs [ class "patronats-logos" ] ]
                 [ img [ src "src/assets/public/logo_ptu_small.jpg" ] [] ]
             , Grid.col [ Col.xs6, Col.sm4, Col.attrs [ class "patronats-logos" ] ]
-                [ img [ src "src/assets/public/logo_uss.png" ] [] ]
-            , Grid.col [ Col.xs6, Col.sm4, Col.attrs [ class "patronats-logos" ] ]
-                [ img [ src "src/assets/public/logo_movember.png" ] [] ]
+                [ img [ src "src/assets/public/logo_prezydent.jpg" ] [] ]
+            , Grid.col [ Col.xs6, Col.sm6, Col.attrs [ class "patronats-logos" ] ]
+                [ img [ src "src/assets/public/logo_uss.png", class "left" ] [] ]
+            , Grid.col [ Col.xs6, Col.sm6, Col.attrs [ class "patronats-logos" ] ]
+                [ img [ src "src/assets/public/logo_ptd.jpeg", class "right" ] [] ]
             , Grid.col [ Col.xs6, Col.sm4, Col.attrs [ class "patronats-logos" ] ]
                 [ img [ src "src/assets/public/logo_oil.png" ] [] ]
             , Grid.col [ Col.xs6, Col.sm4, Col.attrs [ class "patronats-logos" ] ]
-                [ img [ src "src/assets/public/logo_ptd.jpeg" ] [] ]
-            , Grid.col [ Col.xs12, Col.attrs [ class "patronats-logos" ] ]
                 [ img [ src "src/assets/public/logo_uck.png" ] [] ]
+            , Grid.col [ Col.xs6, Col.sm4, Col.attrs [ class "patronats-logos" ] ]
+                [ img [ src "src/assets/public/logo_movember.png" ] [] ]
             ]
         , Grid.row [ Row.centerMd, Row.attrs [ class "hashtag" ] ]
             [ Grid.col [ Col.xs12, Col.attrs [ class "hashtag-large" ] ]
@@ -188,16 +190,6 @@ view model =
         , Grid.row [ Row.centerMd, Row.attrs [ id "registration", class "registration-wrapper" ] ]
             [ Grid.col [ Col.xs12, Col.attrs [ class "registration-title" ] ]
                 [ text lang.registrationNote ]
-            , Grid.col [ Col.xs12, Col.attrs [ class "registration-date" ] ]
-                [ text "03.11.2019" ]
-            , Grid.col [ Col.xs12, Col.attrs [ class "registration-button" ] ]
-                [ a
-                    [ href <| registrationUrl lang
-                    , target "_blank"
-                    , class "btn btn-dark"
-                    ]
-                    [ text <| String.toUpper lang.registration ]
-                ]
             ]
         , Grid.row [ Row.centerMd, Row.attrs [ id "regulations", class "regulations-wrapper" ] ]
             [ Grid.col [ Col.xs12, Col.attrs [ class "regulations-title" ] ]
@@ -293,7 +285,7 @@ englishLang =
         , fifth = "Prostate cancer through the eyes of a biotechnologist"
         , sixth = "STD on the Internet - is it easier to talk annonymously"
         }
-    , registrationNote = "REGISTER TO SHAMELESS GDAŃSK BY"
+    , registrationNote = "REGISTER HAS BEEN CLOSED"
     , regulations = "RULES AND REGULATIONS"
     , read = "READ"
     }
@@ -325,7 +317,7 @@ polishLang =
         , fifth = "Rak prostaty okiem biotechnologa"
         , sixth = "Dzielenie się wiedzą na temat chorób przenoszonych drogą płciową w Internecie"
         }
-    , registrationNote = "REJESTRACJA NA SHAMELESS GDAŃSK TRWA DO"
+    , registrationNote = "REJESTRACJA ZOSTAŁA ZAMKNIĘTA"
     , regulations = "REGULAMIN SESJI KONKURSOWEJ"
     , read = "PRZECZYTAJ"
     }

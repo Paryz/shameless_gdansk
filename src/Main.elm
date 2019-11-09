@@ -281,7 +281,7 @@ englishLang =
         { first = "Interdisciplinary cooperation between dermatologists and urologists"
         , second = "Sexually transmitted diseases - education and prevention"
         , third = "November - month of testical and prostate cancer awareness"
-        , fourth = "Dermatological signs of STDs"
+        , fourth = "Anogenital area allergy - from diagnostics to treatment"
         , fifth = "Prostate cancer through the eyes of a biotechnologist"
         , sixth = "STD on the Internet - is it easier to talk annonymously"
         }
@@ -313,7 +313,7 @@ polishLang =
         { first = "Interdyscyplinarna współpraca między urologami a dermatologami"
         , second = "Choroby przenoszone drogą płciową: edukacja i profilaktyka"
         , third = "Profilaktyka nowotworów męskich - jąder i prostaty"
-        , fourth = "Skórne objawy chorób przenoszonych drogą płciową"
+        , fourth = "Alergia okolicy anogenitalnej - od diagnostyki do leczenia"
         , fifth = "Rak prostaty okiem biotechnologa"
         , sixth = "Dzielenie się wiedzą na temat chorób przenoszonych drogą płciową w Internecie"
         }

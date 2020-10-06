@@ -19,28 +19,9 @@
   padding-left: 0 !important;
 }
 
-.navigation{
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  position: absolute;
-  top: 0;
+.video-wrapper-column img {
   width: 100%;
-  z-index: 1;
-  font-weight: bold;
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: white !important;
-  font-family: Roboto-font;
-}
-
-.navigation a {
-  color: white !important;
-}
-
-.full-video {
-  width: 100%;
+  height: auto;
 }
 
 .patronats-logos img.left {

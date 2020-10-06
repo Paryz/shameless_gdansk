@@ -1,10 +1,10 @@
-module Main exposing (LangType(..), Language, Model, Msg(..), englishLang, main, polishLang, rulesUrl, update, view)
+module Main exposing (LangType(..), Language, Model, Msg(..), englishLang, main, polishLang, programmeUrl, registrationUrl, rulesUrl, update, view)
 
 import Bootstrap.Grid as Grid
 import Bootstrap.Grid.Col as Col
 import Bootstrap.Grid.Row as Row
 import Browser
-import Html exposing (Html, a, br, div, h1, img, nav, p, source, strong, text, video)
+import Html exposing (Html, a, div, h1, img, nav, p, source, strong, text, video)
 import Html.Attributes exposing (autoplay, class, download, href, id, loop, property, src, target, type_)
 import Html.Events exposing (onClick)
 import Json.Encode as Json
@@ -31,6 +31,16 @@ type alias Language =
         , fourth : String
         , fifth : String
         }
+    , programme : String
+    , aboutRecord :
+        { first : String
+        , second : String
+        , third : String
+        , fourth : String
+        , fifth : String
+        , sixth : String
+        }
+    , registrationNote : String
     , regulations : String
     , read : String
     }
@@ -54,14 +64,36 @@ view model =
     Grid.containerFluid [ class "main-container" ]
         [ Grid.row [ Row.centerMd, Row.attrs [ class "video-wrapper" ] ]
             [ Grid.col [ Col.xs12, Col.attrs [ class "video-wrapper-column" ] ]
-                [ img [ src "src/assets/public/tlo.png" ] [] ]
+                [ nav [ class "navigation" ]
+                    [ div []
+                        [ a [ href "#", onClick ToPln ] [ text "PL" ]
+                        , text " / "
+                        , a [ href "#", onClick ToEng ] [ text "EN" ]
+                        ]
+                    , a [ href "#about" ] [ text lang.about ]
+                    , a [ href "#sponsors" ] [ text lang.sponsors ]
+                    , a [ href "#registration" ] [ text lang.registration ]
+                    , a [ href "#contact" ] [ text lang.contact ]
+                    ]
+                , video
+                    [ class "full-video"
+                    , id "video"
+                    , property "muted" (Json.bool True)
+                    , property "playsinline" (Json.bool True)
+                    , autoplay True
+                    , loop True
+                    ]
+                    [ source
+                        [ src "src/assets/public/shameless_gdansk_logo_animation_v1.mp4"
+                        , type_ "video/mp4"
+                        ]
+                        []
+                    ]
+                ]
             ]
         , Grid.row [ Row.centerMd, Row.attrs [ class "registration-wrapper" ] ]
             [ Grid.col [ Col.xs12, Col.attrs [ class "registration-date" ] ]
-                [ text "28.11.2020"
-                , br [] []
-                , text "5 SHADES OF HPV"
-                ]
+                [ text "30.11.2019" ]
             ]
         , Grid.row [ Row.centerMd, Row.attrs [ class "organizers-wrapper" ] ]
             [ Grid.col
@@ -112,6 +144,53 @@ view model =
             , Grid.col [ Col.xs12, Col.attrs [ class "hashtag-small hashtag-fifth" ] ]
                 [ text lang.longNote.fifth ]
             ]
+        , Grid.row [ Row.centerMd, Row.attrs [ id "about" ] ]
+            [ Grid.col [ Col.xs12, Col.attrs [ class "about-title" ] ]
+                [ text <| String.toUpper lang.about ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "about-programme" ] ]
+                [ a [ href programmeUrl, target "_blank", class "btn btn-dark" ] [ text <| String.toUpper lang.programme ] ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "about-table-row" ] ]
+                [ div [ class "about-table-cell" ] [ text lang.aboutRecord.first ]
+                , div [ class "pink about-table-cell" ] [ text lang.aboutRecord.second ]
+                , div [ class "about-table-cell" ] [ text lang.aboutRecord.third ]
+                ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "about-table-row" ] ]
+                [ div [ class "pink about-table-cell" ] [ text lang.aboutRecord.fourth ]
+                , div [ class "about-table-cell" ] [ text lang.aboutRecord.fifth ]
+                , div [ class "pink about-table-cell" ] [ text lang.aboutRecord.sixth ]
+                ]
+            ]
+        , Grid.row [ Row.centerMd, Row.attrs [ id "sponsors", class "sponsors-wrapper" ] ]
+            [ Grid.col [ Col.xs12, Col.attrs [ class "sponsors-title" ] ]
+                [ text lang.sponsors ]
+            , Grid.col [ Col.xs6, Col.md4, Col.attrs [ class "sponsors-logos" ] ]
+                [ img [ src "src/assets/public/logo_apotex.png" ] [] ]
+            , Grid.col [ Col.xs6, Col.md4, Col.attrs [ class "sponsors-logos" ] ]
+                [ img [ src "src/assets/public/logo_la_roche.jpg" ] [] ]
+            , Grid.col [ Col.xs6, Col.md4, Col.attrs [ class "sponsors-logos" ] ]
+                [ img [ src "src/assets/public/logo_lefrosch.png" ] [] ]
+            , Grid.col [ Col.xs6, Col.md4, Col.attrs [ class "sponsors-logos" ] ]
+                [ img [ src "src/assets/public/logo_dr_cichiobieg.jpeg" ] [] ]
+            , Grid.col [ Col.xs6, Col.md4, Col.attrs [ class "sponsors-logos" ] ]
+                [ img [ src "src/assets/public/logo_primavika.jpg" ] [] ]
+            , Grid.col [ Col.xs6, Col.md4, Col.attrs [ class "sponsors-logos" ] ]
+                [ img [ src "src/assets/public/logo_unimil.png" ] [] ]
+            , Grid.col [ Col.xs6, Col.md4, Col.attrs [ class "sponsors-logos" ] ]
+                [ img [ src "src/assets/public/logo_putka.png" ] [] ]
+            , Grid.col [ Col.xs6, Col.md4, Col.attrs [ class "sponsors-logos" ] ]
+                [ img [ src "src/assets/public/logo_ziololek.jpg" ] [] ]
+            , Grid.col [ Col.xs6, Col.md4, Col.attrs [ class "sponsors-logos" ] ]
+                [ img [ src "src/assets/public/logo_schar.png" ] [] ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "media-patrons-title" ] ]
+                [ text lang.mediaPatrons ]
+            , Grid.col [ Col.xs12, Col.attrs [ class "media-patrons-logos" ] ]
+                [ img [ src "src/assets/public/logo_smif.png" ] []
+                ]
+            ]
+        , Grid.row [ Row.centerMd, Row.attrs [ id "registration", class "registration-wrapper" ] ]
+            [ Grid.col [ Col.xs12, Col.attrs [ class "registration-title" ] ]
+                [ text lang.registrationNote ]
+            ]
         , Grid.row [ Row.centerMd, Row.attrs [ id "regulations", class "regulations-wrapper" ] ]
             [ Grid.col [ Col.xs12, Col.attrs [ class "regulations-title" ] ]
                 [ text lang.regulations ]
@@ -155,14 +234,29 @@ update msg model =
             { model | languageJson = polishLang }
 
 
+programmeUrl : String
+programmeUrl =
+    "https://shameless.gumed.edu.pl/src/assets/public/programme.pdf"
+
+
+registrationUrl : Language -> String
+registrationUrl lang =
+    case lang.language of
+        EN ->
+            "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__iVtKxtUMkk4MzUzTjAwRzBESDlQUU04UzNINTdGUS4u"
+
+        PL ->
+            "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__iVtKxtUNjlHSDdLWEJGMjNWVE40S1BEUjlJTjVRTC4u"
+
+
 rulesUrl : Language -> String
 rulesUrl lang =
     case lang.language of
         EN ->
-            "https://onedrive.live.com/?authkey=%21AC6n4%5FJVJaHRxCI&cid=8832C8A0986525C7&id=8832C8A0986525C7%21156&parId=8832C8A0986525C7%21155&o=OneUp"
+            "https://shameless.gumed.edu.pl/src/assets/public/rules-ang.pdf"
 
         PL ->
-            "https://onedrive.live.com/?authkey=%21AC6n4%5FJVJaHRxCI&cid=8832C8A0986525C7&id=8832C8A0986525C7%21156&parId=8832C8A0986525C7%21155&o=OneUp"
+            "https://shameless.gumed.edu.pl/src/assets/public/rules-pl.pdf"
 
 
 englishLang : Language
@@ -182,6 +276,16 @@ englishLang =
         , fourth = "Do it for yourself, do it for the people you care about."
         , fifth = "Prevent what can be prevented."
         }
+    , programme = "Programme"
+    , aboutRecord =
+        { first = "Interdisciplinary cooperation between dermatologists and urologists"
+        , second = "Sexually transmitted diseases - education and prevention"
+        , third = "November - month of testical and prostate cancer awareness"
+        , fourth = "Anogenital area allergy - from diagnostics to treatment"
+        , fifth = "Prostate cancer through the eyes of a biotechnologist"
+        , sixth = "STD on the Internet - is it easier to talk annonymously"
+        }
+    , registrationNote = "REGISTER HAS BEEN CLOSED"
     , regulations = "RULES AND REGULATIONS"
     , read = "READ"
     }
@@ -204,6 +308,16 @@ polishLang =
         , fourth = "Zróbmy to dla siebie i naszych najbliższych."
         , fifth = "Zabezpieczaj się, by zapobiegać."
         }
+    , programme = "Program"
+    , aboutRecord =
+        { first = "Interdyscyplinarna współpraca między urologami a dermatologami"
+        , second = "Choroby przenoszone drogą płciową: edukacja i profilaktyka"
+        , third = "Profilaktyka nowotworów męskich - jąder i prostaty"
+        , fourth = "Alergia okolicy anogenitalnej - od diagnostyki do leczenia"
+        , fifth = "Rak prostaty okiem biotechnologa"
+        , sixth = "Dzielenie się wiedzą na temat chorób przenoszonych drogą płciową w Internecie"
+        }
+    , registrationNote = "REJESTRACJA ZOSTAŁA ZAMKNIĘTA"
     , regulations = "REGULAMIN SESJI KONKURSOWEJ"
     , read = "PRZECZYTAJ"
     }
